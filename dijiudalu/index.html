@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第九大陆 - 经典次世代3D MMORPG 游戏资料站与攻略指南</title>
+    <meta name="description" content="第九大陆官方资料站，提供游戏下载、职业介绍、副本攻略、装备获取及玩家社区交流。深入了解第九大陆的世界观、技能搭配与战斗技巧。">
+    <meta name="keywords" content="第九大陆, 第九大陆攻略, 第九大陆下载, 第九大陆职业, 第九大陆副本">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00d2ff;
+            --secondary-color: #3a7bd5;
+            --accent-color: #ff9a9e;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), var(--dark-bg)), 
+                        url('https://picsum.photos/seed/ninthland_hero/1920/1080') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(58, 123, 213, 0.4) 0%, rgba(15, 23, 42, 0.8) 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Game Info Section */
+        .game-info {
+            background-color: #162032;
+        }
+
+        .info-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .info-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .info-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .stat-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Class Section */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .class-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .class-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+        }
+
+        .class-img {
+            height: 200px;
+            background-color: #2d3748;
+            position: relative;
+        }
+        
+        .class-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .class-info {
+            padding: 1.5rem;
+        }
+
+        .class-info h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .class-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .class-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+        }
+
+        /* Guide Section */
+        .guide-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .guide-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .guide-content h5 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .guide-content span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-muted);
+            display: none;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b1120;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .info-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>⚔️</span> 第九大陆
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#game-info">游戏介绍</a></li>
+                    <li><a href="#classes">职业选择</a></li>
+                    <li><a href="#guides">新手攻略</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>次世代 3D MMORPG 体验</h1>
+                <p>在第九大陆的广阔世界中，探索未知的领域，挑战强大的魔物，与百万玩家共同谱写史诗篇章。</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">免费下载游戏</a>
+                    <a href="#guides" class="btn btn-outline">查看新手指南</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>宏大的开放世界</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">无缝地图设计，从冰雪荒原到热带雨林，探索每一个角落的隐藏秘密。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚔️</div>
+                        <h3>爽快的战斗系统</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">华丽连招与技能组合，打造属于你的战斗风格，体验极致的打击感。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>丰富的社交玩法</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">公会系统、副本挑战、跨服竞技，与好友并肩作战，共创荣耀。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💎</div>
+                        <h3>精致画面与剧情</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">次世代渲染技术，配合跌宕起伏的剧情故事，沉浸感拉满。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Info Section -->
+        <section id="game-info" class="section game-info">
+            <div class="container info-layout">
+                <div class="info-image">
+                    <img src="https://picsum.photos/seed/ninthland_game/600/400" alt="第九大陆游戏画面">
+                </div>
+                <div class="info-content">
+                    <h3>关于《第九大陆》</h3>
+                    <p>《第九大陆》是一款由知名游戏团队研发的次世代 3D MMORPG。游戏采用了先进的图形引擎，构建了一个宏大而细腻的奇幻世界。玩家将扮演一名冒险者，在这个充满魔法与机械的世界中，通过不断的修炼、探索和战斗，揭开世界毁灭的真相。</p>
+                    <p>游戏不仅拥有极致的视觉体验，更注重玩法深度。从传统的打怪升级到复杂的装备养成，从单人挑战到大型团队副本，每一项内容都经过精心打磨，旨在为玩家提供最优质的网游体验。</p>
+                    
+                    <div class="stat-list">
+                        <div class="stat-item">
+                            <strong>3D</strong>
+                            <span>极致画质</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>MMORPG</strong>
+                            <span>经典玩法</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>100+</strong>
+                            <span>技能组合</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>24h</strong>
+                            <span>在线活动</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Classes Section -->
+        <section id="classes" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>选择你的职业</h2>
+                    <p>五大职业，五种战斗风格，总有一款适合你</p>
+                </div>
+                <div class="class-grid">
+                    <!-- Warrior -->
+                    <div class="class-card">
+                        <div class="class-img">
+                            <img src="https://picsum.photos/seed/warrior_ninth/400/300" alt="战士职业">
+                        </div>
+                        <div class="class-info">
+                            <h4>狂暴战士</h4>
+                            <p>近战物理输出，以高爆发和强生存能力著称，是团队中的前排核心。</p>
+                            <div class="class-tags">
+                                <span class="tag">高血量</span>
+                                <span class="tag">近战</span>
+                                <span class="tag">爆发</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mage -->
+                    <div class="class-card">
+                        <div class="class-img">
+                            <img src="https://picsum.photos/seed/mage_ninth/400/300" alt="法师职业">
+                        </div>
+                        <div class="class-info">
+                            <h4>元素法师</h4>
+                            <p>远程魔法输出，掌控火、冰、雷等元素力量，对敌人造成毁灭性打击。</p>
+                            <div class="class-tags">
+                                <span class="tag">远程</span>
+                                <span class="tag">魔法</span>
+                                <span class="tag">AOE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Archer -->
+                    <div class="class-card">
+                        <div class="class-img">
+                            <img src="https://picsum.photos/seed/archer_ninth/400/300" alt="弓箭手职业">
+                        </div>
+                        <div class="class-info">
+                            <h4>幻影游侠</h4>
+                            <p>超远距离物理输出，拥有极高的敏捷度和机动性，擅长风筝敌人。</p>
+                            <div class="class-tags">
+                                <span class="tag">敏捷</span>
+                                <span class="tag">远程</span>
+                                <span class="tag">控制</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cleric -->
+                    <div class="class-card">
+                        <div class="class-img">
+                            <img src="https://picsum.photos/seed/cleric_ninth/400/300" alt="牧师职业">
+                        </div>
+                        <div class="class-info">
+                            <h4>圣光牧师</h4>
+                            <p>治疗与辅助，为队友提供持续的生命恢复和增益效果，团队不可或缺。</p>
+                            <div class="class-tags">
+                                <span class="tag">治疗</span>
+                                <span class="tag">辅助</span>
+                                <span class="tag">团队</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Assassin -->
+                    <div class="class-card">
+                        <div class="class-img">
+                            <img src="https://picsum.photos/seed/assassin_ninth/400/300" alt="刺客职业">
+                        </div>
+                        <div class="class-info">
+                            <h4>暗影刺客</h4>
+                            <p>高爆发刺客，擅长隐身和暴击，能在瞬间秒杀敌方脆皮目标。</p>
+                            <div class="class-tags">
+                                <span class="tag">爆发</span>
+                                <span class="tag">隐身</span>
+                                <span class="tag">单体</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gunner -->
+                    <div class="class-card">
+                        <div class="class-img">
+                            <img src="https://picsum.photos/seed/gunner_ninth/400/300" alt="枪手职业">
+                        </div>
+                        <div class="class-info">
+                            <h4>重炮枪手</h4>
+                            <p>重火力输出，使用各种机械枪械，拥有强大的持续伤害能力。</p>
+                            <div class="class-tags">
+                                <span class="tag">机械</span>
+                                <span class="tag">火力</span>
+                                <span class="tag">持续</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guides Section -->
+        <section id="guides" class="section" style="background-color: #162032;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>新手攻略指南</h2>
+                    <p>从零开始，快速上手第九大陆</p>
+                </div>
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <div class="guide-icon">1️⃣</div>
+                        <div class="guide-content">
+                            <h5>角色创建与职业选择</h5>
+                            <span>根据你的游戏习惯选择战士、法师或牧师等职业。</span>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon">2️⃣</div>
+                        <div class="guide-content">
+                            <h5>主线任务推进</h5>
+                            <span>跟随主线剧情，快速提升等级并解锁地图区域。</span>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon">3️⃣</div>
+                        <div class="guide-content">
+                            <h5>装备获取与强化</h5>
+                            <span>通过副本掉落和制作获取装备，强化提升战力。</span>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon">4️⃣</div>
+                        <div class="guide-content">
+                            <h5>技能加点建议</h5>
+                            <span>合理分配技能点，打造专精流派。</span>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon">5️⃣</div>
+                        <div class="guide-content">
+                            <h5>加入公会</h5>
+                            <span>寻找志同道合的伙伴，参与公会活动和大型副本。</span>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon">6️⃣</div>
+                        <div class="guide-content">
+                            <h5>PVP 竞技场入门</h5>
+                            <span>了解竞技场规则，提升操作技巧。</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                    <p>关于游戏的疑问解答</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">第九大陆支持哪些平台？</div>
+                        <div class="faq-answer">目前游戏支持 Windows 系统的 PC 端下载，未来计划推出移动端版本。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏是免费的吗？</div>
+                        <div class="faq-answer">是的，《第九大陆》是一款免费游玩的游戏，内设有商城出售外观道具，不影响游戏平衡。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何加入公会？</div>
+                        <div class="faq-answer">玩家达到一定等级后，可以在主城寻找公会管理员，浏览并申请加入感兴趣的公会。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏对电脑配置要求高吗？</div>
+                        <div class="faq-answer">游戏优化良好，建议配置为 Intel Core i3 或同级处理器，8GB 内存，GTX 660 或同级显卡。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <span>⚔️</span> 第九大陆
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        致力于为玩家提供最优质的 3D MMORPG 体验，打造属于我们的数字冒险世界。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>快速链接</h5>
+                    <ul>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">新手指南</a></li>
+                        <li><a href="#">职业大全</a></li>
+                        <li><a href="#">活动公告</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>支持与联系</h5>
+                    <ul>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">客服中心</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 第九大陆资料站 版权所有. 本页面为非官方网站，仅供展示与参考。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                                 </html>
