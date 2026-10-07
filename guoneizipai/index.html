@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="国内自拍 - 专业分享国内自拍摄影技巧、手机与相机拍摄指南、热门自拍风格推荐及在线展示平台。提供构图、光线及后期处理技巧，助您拍出自然唯美的个人影像。">
+    <meta name="keywords" content="国内自拍,自拍技巧,手机摄影,人像摄影,构图技巧,自拍修图">
+    <title>国内自拍 - 摄影技巧与风格指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --secondary-color: #ec4899;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-radius: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #e0e7ff 0%, #fae8ff 100%);
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.6);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            backdrop-filter: blur(4px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #f1f5f9;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 15px;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background-color: white;
+        }
+
+        .tip-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            background: var(--bg-color);
+            margin-bottom: 15px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .tip-icon {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .tip-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .tip-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Showcase Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 3/4;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover img {
+            opacity: 0.8;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <span>国内自拍</span>指南
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#styles">风格分类</a></li>
+                    <li><a href="#tips">拍摄技巧</a></li>
+                    <li><a href="#gallery">精选图集</a></li>
+                    <li><a href="#community">社区交流</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">投稿</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>记录真实的自我</h1>
+                <p>探索国内流行的自拍风格，掌握手机与相机的构图技巧，发现最适合你的光影美学。</p>
+                <div class="hero-tags">
+                    <span class="tag">#清新自然</span>
+                    <span class="tag">#复古胶片</span>
+                    <span class="tag">#极简光影</span>
+                    <span class="tag">#人像特写</span>
+                    <span class="tag">#氛围感</span>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                    <button class="btn btn-primary" onclick="document.getElementById('styles').scrollIntoView({behavior: 'smooth'})">开始探索风格</button>
+                    <button class="btn btn-outline" style="border-color: #1e293b; color: #1e293b;">查看拍摄教程</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Style Categories -->
+        <section id="styles" class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门风格分类</h2>
+                <a href="#" class="section-link">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">清新</span>
+                        <img src="https://picsum.photos/seed/portrait1/400/300" alt="清新风格自拍示例">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">清新自然风</h3>
+                        <p class="card-desc">强调通透的肤色和自然的光线，适合校园、公园等户外场景，展现青春活力。</p>
+                        <div class="card-meta">
+                            <span>教程 12 篇</span>
+                            <span>示例 85 张</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">复古</span>
+                        <img src="https://picsum.photos/seed/portrait2/400/300" alt="复古风格自拍示例">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">复古胶片风</h3>
+                        <p class="card-desc">利用低饱和度色调和颗粒感，营造怀旧氛围，适合老街、咖啡馆等文艺场景。</p>
+                        <div class="card-meta">
+                            <span>教程 8 篇</span>
+                            <span>示例 62 张</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">高级感</span>
+                        <img src="https://picsum.photos/seed/portrait3/400/300" alt="高级感风格自拍示例">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">高级极简风</h3>
+                        <p class="card-desc">大面积留白与单一色调，突出人物情绪，适合纯色背景或逆光剪影拍摄。</p>
+                        <div class="card-meta">
+                            <span>教程 15 篇</span>
+                            <span>示例 94 张</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="tips-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">拍摄与修图技巧</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="tip-item">
+                        <div class="tip-icon">1</div>
+                        <div class="tip-content">
+                            <h3>寻找侧逆光</h3>
+                            <p>侧逆光是制造面部立体感的关键。让光线从侧后方照射，能在面部形成自然的轮廓光，消除死黑阴影。</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">2</div>
+                        <div class="tip-content">
+                            <h3>利用前景遮挡</h3>
+                            <p>透过树叶缝隙、窗户或花丛拍摄，利用前景的虚化效果增加画面的层次感和故事性。</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">3</div>
+                        <div class="tip-content">
+                            <h3>手机参数设置</h3>
+                            <p>建议关闭自动HDR，开启九宫格辅助线，使用“人像模式”或手动调节光圈大小，虚化背景。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Showcase -->
+        <section id="gallery" class="container">
+            <div class="section-header">
+                <h2 class="section-title">精选图集</h2>
+                <a href="#" class="section-link">浏览更多 &rarr;</a>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/face1/300/400" alt="自拍图集">
+                    <div class="gallery-overlay">
+                        <h4>晨间露水</h4>
+                        <span>128 次浏览</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/face2/300/400" alt="自拍图集">
+                    <div class="gallery-overlay">
+                        <h4>午后光影</h4>
+                        <span>256 次浏览</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/face3/300/400" alt="自拍图集">
+                    <div class="gallery-overlay">
+                        <h4>街头随拍</h4>
+                        <span>189 次浏览</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/face4/300/400" alt="自拍图集">
+                    <div class="gallery-overlay">
+                        <h4>居家特写</h4>
+                        <span>340 次浏览</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/face5/300/400" alt="自拍图集">
+                    <div class="gallery-overlay">
+                        <h4>情绪表达</h4>
+                        <span>412 次浏览</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/face6/300/400" alt="自拍图集">
+                    <div class="gallery-overlay">
+                        <h4>眼神光</h4>
+                        <span>275 次浏览</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/face7/300/400" alt="自拍图集">
+                    <div class="gallery-overlay">
+                        <h4>局部特写</h4>
+                        <span>198 次浏览</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/face8/300/400" alt="自拍图集">
+                    <div class="gallery-overlay">
+                        <h4>背影故事</h4>
+                        <span>331 次浏览</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container" style="padding-bottom: 80px;">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            <div style="max-width: 800px;">
+                <details style="margin-bottom: 15px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--text-main);">如何让自拍显得脸更小？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">可以尝试低头45度拍摄，利用广角镜头的畸变（注意控制距离），或者寻找有纵深感的背景。</p>
+                </details>
+                <details style="margin-bottom: 15px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--text-main);">手机自拍光线不好怎么办？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">尽量靠近窗户等自然光源，或者使用环形补光灯。避免面部正对强光直射，以免产生死黑。</p>
+                </details>
+                <details style="margin-bottom: 15px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--text-main);">新手适合什么风格的自拍？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary)；">建议从“清新自然风”入手，不需要复杂的后期，重点在于构图和表情管理。</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>国内自拍指南</h2>
+                    <p style="color: #94a3b8; max-width: 300px;">专注于分享国内流行的自拍摄影技巧与风格，帮助每个人都能轻松拍出满意的自拍作品。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">风格分类</a></li>
+                        <li><a href="#">拍摄教程</a></li>
+                        <li><a href="#">社区交流</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门标签</h4>
+                    <ul>
+                        <li><a href="#">手机摄影</a></li>
+                        <li><a href="#">人像构图</a></li>
+                        <li><a href="#">滤镜推荐</a></li>
+                        <li><a href="#">穿搭搭配</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 国内自拍指南. All rights reserved. 本站内容仅供学习交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
