@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="演艺圈潜规则深度解析：揭秘行业背后的不透明机制、法律边界及从业者生存现状。本站提供关于演艺圈潜规则的客观资讯、行业观察及维权建议。">
+    <meta name="keywords" content="演艺圈潜规则,娱乐圈潜规则,演艺行业潜规则,明星潜规则,演艺圈揭秘,行业黑幕">
+    <title>演艺圈潜规则-行业揭秘与生存现状深度解析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: #a93226;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Article Content */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 240px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .article-body {
+            padding: 24px;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .article-tag {
+            background-color: #eef2f5;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 6px;
+            transition: transform 0.2s;
+        }
+
+        .read-more:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg-color);
+            color: var(--primary-color);
+        }
+
+        .category-list li {
+            margin-bottom: 12px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+        }
+
+        .category-count {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .info-block {
+            background-color: #fff8f8;
+            border-left: 4px solid var(--accent-color);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .info-block h4 {
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .info-block p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--card-bg);
+            padding: 40px var(--spacing-unit);
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            padding-left: 24px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            margin: 0 12px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none; /* Simplified mobile nav for this demo */
+            }
+
+            .header-container {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>演艺圈</span>观察室
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">行业资讯</a></li>
+                    <li><a href="#">深度解析</a></li>
+                    <li><a href="#">维权指南</a></li>
+                    <li><a href="#">从业者故事</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">投稿与爆料</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>演艺圈潜规则：行业背后的机制与边界</h1>
+            <p>深度剖析娱乐圈的生存法则，探讨行业透明化改革与从业者的法律权益。</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <main>
+            <div class="article-list">
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/ent1/800/400" alt="娱乐圈行业观察" class="article-image">
+                    <div class="article-body">
+                        <div class="article-meta">
+                            <span class="article-tag">行业观察</span>
+                            <span>2023-10-24</span>
+                        </div>
+                        <h2 class="article-title">从合约纠纷看演艺圈潜规则的演变：从私下交易到法律博弈</h2>
+                        <p class="article-excerpt">近年来，随着法律意识的增强，演艺圈潜规则的表现形式发生了显著变化。传统的私下利益交换逐渐转向更为隐蔽的合约陷阱与职场霸凌。本文将回顾几个典型案例，分析从业者在面对不透明条款时的应对策略。</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/ent2/800/400" alt="新人培训与生存现状" class="article-image">
+                    <div class="article-body">
+                        <div class="article-meta">
+                            <span class="article-tag">新人指南</span>
+                            <span>2023-10-22</span>
+                        </div>
+                        <h2 class="article-title">新人进入演艺圈的生存现状：警惕隐形剥削与过度承诺</h2>
+                        <p class="article-excerpt">对于怀揣明星梦的新人而言，行业充满了诱惑与陷阱。本篇内容将详细拆解“免费试镜”、“对赌协议”以及“无薪实习”等常见现象背后的逻辑，帮助新人建立正确的职业认知。</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/ent3/800/400" alt="法律维权与行业规范" class="article-image">
+                    <div class="article-body">
+                        <div class="article-meta">
+                            <span class="article-tag">法律维权</span>
+                            <span>2023-10-18</span>
+                        </div>
+                        <h2 class="article-title">遭遇职场不公？演艺圈从业者维权途径与证据收集指南</h2>
+                        <p class="article-excerpt">当潜规则转化为实质性的侵权行为时，如何利用法律武器保护自己？本文整理了从劳动仲裁到民事诉讼的完整流程，并强调了聊天记录、录音录像等电子证据的保存重要性。</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门话题</h3>
+                <ul class="category-list">
+                    <li><a href="#">流量明星税务风波 <span class="category-count">128</span></a></li>
+                    <li><a href="#">剧组选角潜规则曝光 <span class="category-count">95</span></a></li>
+                    <li><a href="#">横店群演生存实录 <span class="category-count">84</span></a></li>
+                    <li><a href="#">艺人经纪公司避坑指南 <span class="category-count">62</span></a></li>
+                    <li><a href="#">海外归国艺人就业困境 <span class="category-count">45</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">免责声明</h3>
+                <div class="info-block">
+                    <h4>内容真实性说明</h4>
+                    <p>本站所有内容均基于公开报道、行业分析及法律条文整理，旨在提供客观信息。对于未经证实的小道消息，我们建议读者保持理性判断。</p>
+                </div>
+                <div class="info-block">
+                    <h4>隐私保护</h4>
+                    <p>我们承诺保护爆料者的隐私安全，所有涉及个人信息的爆料均经过匿名处理。</p>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">相关阅读</h3>
+                <ul class="category-list">
+                    <li><a href="#">什么是“阴阳合同”？</a></li>
+                    <li><a href="#">如何识别虚假经纪公司？</a></li>
+                    <li><a href="#">演艺行业劳动合同范本解析</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="widget-title" style="text-align: center; border: none;">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>演艺圈潜规则是否违法？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>演艺圈潜规则的界定取决于其具体表现形式。单纯的职场建议或行业惯例通常不违法，但若涉及性骚扰、强迫交易、敲诈勒索或违反《劳动法》的合同条款，则属于违法行为。受害者应保留证据并向有关部门举报。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>新人如何避免陷入潜规则陷阱？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>新人应选择正规、有资质的经纪公司，并仔细审查合同条款。在试镜和合作过程中，尽量保持职业化沟通，避免单独与不熟悉的人进入私密空间。对于任何涉及个人隐私或身体的不合理要求，应果断拒绝并寻求法律援助。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>如果不幸遭遇不公，该找谁求助？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>首先可向当地劳动监察大队投诉，或申请劳动仲裁。涉及人身安全或刑事犯罪（如猥亵、诈骗）的，应直接拨打110报警。此外，也可以向行业协会或相关法律援助中心寻求专业帮助。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">投稿指南</a>
+                <a href="#">免责声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系方式</a>
+            </div>
+            <p class="copyright">Copyright © 2023 演艺圈观察室. All Rights Reserved.</p>
+            <p class="copyright" style="margin-top: 8px; font-size: 0.8rem;">本站内容仅供交流学习，不构成任何商业建议。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
