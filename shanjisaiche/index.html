@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山脊赛车 - 经典赛车游戏怀旧与深度攻略指南。提供山脊赛车1-7代版本介绍、车辆改装技巧、赛道评测及最佳游戏配置推荐。">
+    <meta name="keywords" content="山脊赛车, Ridge Racer, 赛车游戏, 怀旧游戏, 网页版山脊赛车, 赛车攻略">
+    <title>山脊赛车-经典赛车游戏怀旧与深度攻略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4d4d;
+            --secondary-color: #ffcc00;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #2a0000 0%, #000000 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            filter: contrast(1.2) brightness(0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #ff1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--text-main);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--text-main);
+            color: var(--dark-bg);
+        }
+
+        /* Game Series Grid */
+        .series-section {
+            padding: 4rem 0;
+            background-color: var(--dark-bg);
+        }
+
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .series-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .series-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--primary-color);
+        }
+
+        .series-img {
+            width: 100%;
+            height: 180px;
+            background-color: #333;
+            object-fit: cover;
+        }
+
+        .series-info {
+            padding: 1.5rem;
+        }
+
+        .series-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .series-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 4rem 0;
+            background-color: #181818;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Gameplay Mechanics */
+        .mechanics-section {
+            padding: 4rem 0;
+        }
+
+        .mechanics-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .mechanics-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .mechanics-visual {
+            flex: 1;
+            min-width: 300px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .mechanics-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .mechanics-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .mechanics-list li::before {
+            content: '►';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+            top: 2px;
+        }
+
+        .stat-box {
+            background: #252525;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .stat-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 0;
+            background-color: #181818;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .faq-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 3rem 0;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 1rem;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mechanics-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">Ridge<span>Racer</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#series" class="active">系列游戏</a></li>
+                    <li><a href="#features">核心玩法</a></li>
+                    <li><a href="#mechanics">驾驶技巧</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="https://picsum.photos/seed/racetrack/1920/1080" alt="Ridge Racer Background" class="hero-bg">
+            <div class="hero-content">
+                <h1>极速过弯<br>重回经典</h1>
+                <p>探索《山脊赛车》系列的历史、魅力与独家攻略。从街机到家用机，体验最纯粹的竞速快感。</p>
+                <div>
+                    <a href="#series" class="btn">浏览游戏系列</a>
+                    <a href="#mechanics" class="btn btn-outline">查看攻略</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Series Grid -->
+        <section id="series" class="series-section">
+            <div class="container">
+                <h2 class="section-title">系列游戏总览</h2>
+                <div class="series-grid">
+                    <article class="series-card">
+                        <img src="https://picsum.photos/seed/racer1/400/250" alt="Ridge Racer" class="series-img">
+                        <div class="series-info">
+                            <h3>山脊赛车 (1993)</h3>
+                            <p>系列起源。经典的街机体验，奠定了漂移和连击系统的基础，开启了高速竞速的新纪元。</p>
+                        </div>
+                    </article>
+                    <article class="series-card">
+                        <img src="https://picsum.photos/seed/racer2/400/250" alt="Ridge Racer Type 4" class="series-img">
+                        <div class="series-info">
+                            <h3>山脊赛车 Type 4</h3>
+                            <p>掌机巅峰之作。拥有极其出色的音乐和剧情演出，车辆改装系统丰富，至今仍被奉为神作。</p>
+                        </div>
+                    </article>
+                    <article class="series-card">
+                        <img src="https://picsum.photos/seed/racer3/400/250" alt="Ridge Racer Unbounded" class="series-img">
+                        <div class="series-info">
+                            <h3>山脊赛车：破晓</h3>
+                            <p>风格突变。引入破坏系统和GNR（Garage Nation Racing）概念，强调车辆改装与破坏。</p>
+                        </div>
+                    </article>
+                    <article class="series-card">
+                        <img src="https://picsum.photos/seed/racer4/400/250" alt="Ridge Racer 7" class="series-img">
+                        <div class="series-info">
+                            <h3>山脊赛车 7 (PS3)</h3>
+                            <p>次世代回归。继承了街机原汁原味的操控手感，支持体感操作，视觉效果震撼。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2 class="section-title">游戏核心特色</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h3>极速连击</h3>
+                        <p>通过精准的过弯和氮气加速，积累连击数。连击数越高，加速效果越强，助你一骑绝尘。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔧</div>
+                        <h3>深度改装</h3>
+                        <p>调整引擎、轮胎、悬挂和空气动力学套件。根据赛道特性定制你的赛车，找到最适合的调校。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎵</div>
+                        <h3>经典音乐</h3>
+                        <p>融合了爵士、摇滚与电子乐的动态音乐系统。随着速度的提升，音乐节奏也会随之加快。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gameplay Mechanics -->
+        <section id="mechanics" class="mechanics-section">
+            <div class="container">
+                <div class="mechanics-container">
+                    <div class="mechanics-text">
+                        <h2 class="section-title" style="text-align: left; transform: none; left: 0;">驾驶技巧与机制</h2>
+                        <p>《山脊赛车》的魅力在于其独特的物理引擎。与硬核拟真的赛车游戏不同，山脊赛车更注重“漂移”与“手感”。掌握以下技巧，你将能跑出完美的过弯。</p>
+                        
+                        <ul class="mechanics-list">
+                            <li><strong>反向操控：</strong>在高速入弯时，向弯道外侧反向打方向盘，车身会产生侧滑（漂移），这是积累连击的关键。</li>
+                            <li><strong>氮气管理：</strong>氮气是超越对手的唯一利器。在直道加速段和漂移过程中使用氮气，可以显著提升速度。</li>
+                            <li><strong>路面摩擦：</strong>利用赛道上的不同路面材质（如沥青与混凝土），通过漂移切入可以获得额外的加速。</li>
+                        </ul>
+
+                        <div class="stat-box">
+                            <div class="stat-row">
+                                <span class="stat-label">推荐车辆类型：</span>
+                                <span class="stat-value">后驱跑车 (RWD)</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">最佳操控手感：</span>
+                                <span class="stat-value">漂移导向型</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">推荐操作模式：</span>
+                                <span class="stat-value">手柄 (扳机键加速)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mechanics-visual">
+                        <img src="https://picsum.photos/seed/carinterior/600/400" alt="Car Dashboard" style="width: 100%; border-radius: 4px; opacity: 0.8;">
+                        <div style="margin-top: 1rem; font-size: 0.85rem; color: #888;">
+                            <p>Tip: 在 Type 4 等游戏中，注意查看仪表盘上的连击数和速度表，合理规划氮气使用时机。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>如何在现代平台上玩到《山脊赛车》？</h4>
+                        <p>《山脊赛车 Type 4》和《山脊赛车 7》等作品已登陆PSN商店。此外，任天堂Switch和iOS平台也有相关移植版本或重制版。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>系列游戏对车辆改装重要吗？</h4>
+                        <p>非常重要。虽然游戏强调街机式的爽快感，但合理的改装能显著提升车辆在直道加速和过弯稳定性上的表现。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>什么是GNR？</h4>
+                        <p>GNR是《山脊赛车：破晓》中引入的改装车库系统。玩家可以购买零件，亲自为车辆换色、安装尾翼和尾翼灯，增加个性化程度。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何获得无限氮气？</h4>
+                        <p>在街机模式下，连续漂移和撞击对手可以积累“R-Gauge”量表，当量表满时即可获得无限氮气，这是打破纪录的秘诀。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于系列</a>
+                <a href="#">攻略 Wiki</a>
+                <a href="#">社区讨论</a>
+                <a href="#">版权声明</a>
+            </div>
+            <p>&copy; 2023 Ridge Racer Fan Site. 本站为非官方粉丝站点，旨在分享游戏资讯与攻略。</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #555;">山脊赛车是 Namco Bandai Games 的注册商标。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
